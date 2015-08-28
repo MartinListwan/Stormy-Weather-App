@@ -1,10 +1,12 @@
-package com.martinciesielski_listwan.stomez;
+package com.martinciesielski_listwan.stomez.UI;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.os.Bundle;
+
+import com.martinciesielski_listwan.stomez.R;
 
 /**
  * Created by marti_000 on 2015-08-15.

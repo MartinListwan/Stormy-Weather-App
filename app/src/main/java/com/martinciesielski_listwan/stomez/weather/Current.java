@@ -1,4 +1,6 @@
-package com.martinciesielski_listwan.stomez;
+package com.martinciesielski_listwan.stomez.weather;
+
+import com.martinciesielski_listwan.stomez.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,7 +9,7 @@ import java.util.TimeZone;
 /**
  * Created by marti_000 on 2015-08-15.
  */
-public class CurrentWeather {
+public class Current {
     public String getSummary() {
         return mSummary;
     }
@@ -97,7 +99,10 @@ public class CurrentWeather {
     }
 
     public double getTemperature() {
-        return (int) mTemperature;
+        double mCelcius = mTemperature;
+        mCelcius = (mTemperature - 32) * (5.0/9);
+
+        return (int) mCelcius;
     }
 
     public void setTemperature(double temperature) {
