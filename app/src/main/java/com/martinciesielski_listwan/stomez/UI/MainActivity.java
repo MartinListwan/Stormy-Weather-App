@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.martinciesielski_listwan.stomez.R;
 import com.martinciesielski_listwan.stomez.weather.Current;
+import com.martinciesielski_listwan.stomez.weather.Forecast;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.OkHttpClient;
@@ -186,12 +187,18 @@ public class MainActivity extends ActionBarActivity {
         mIconImageView.setImageDrawable(drawable);
     }
 
+    private Forecast parseForecastDetails(String jsonData){
+        Forecast forecast = new Forecast();
+
+        return forecast;
+    }
     // This special Json class can hold any object in the json format
     // The constructor allows us to pass in a string of json data
     // to create a new json objects
     private Current getCurrentDetails(String jsonData) throws JSONException {
         // throwing the exception means that whoever calls the function
         // must now handle the additional exception
+        // Converts json data to a json objects we can manipulate
         JSONObject forecast = new JSONObject(jsonData);
         String timezone = forecast.getString("timezone");
         Log.i(Tag, "From JSON:" + timezone);
