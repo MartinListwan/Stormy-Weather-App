@@ -10,11 +10,11 @@ public class Hour {
     private String mIcon;
     private String mTimeZone;
 
-    public long getnTime() {
+    public long getTime() {
         return nTime;
     }
 
-    public void setnTime(long nTime) {
+    public void setTime(long nTime) {
         this.nTime = nTime;
     }
 
