@@ -205,16 +205,25 @@ public class MainActivity extends ActionBarActivity {
 
     private Day[] getDailyForecast(String jsonData) throws JSONException {
         JSONObject forecast = new JSONObject(jsonData);
+        // Information is in the forecast object
         String timezone = forecast.getString("timezone");
+        // there is one daily object per forecast, which holds summary icon and data
         JSONObject daily = forecast.getJSONObject("daily");
+        // Is an array held inside daily
         JSONArray data = daily.getJSONArray("data");
 
+        // Creates a new array of days the same size as the number of days
         Day[] days = new Day[data.length()];
 
+        // creates new day object for each index in the array of days
         for (int i = 0; i < data.length(); i++) {
+            // data needs to be indexed since it is an array of days
             JSONObject jsonDay = data.getJSONObject(i);
+
+            // Since youre creating your own array with the info you need. You create a new object for each day
             Day day = new Day();
 
+            // Getting day info you need
             day.setSummary(jsonDay.getString("summary"));
             day.setIcon(jsonDay.getString("icon"));
             day.setTemperatureMax(jsonDay.getDouble("temperatureMax"));
