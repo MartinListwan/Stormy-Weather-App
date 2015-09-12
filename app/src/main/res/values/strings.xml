@@ -6,4 +6,6 @@
     <string name="Error_title">Oops! Sorry!</string>
     <string name="Error_message">There was an error. Please try again.</string>
     <string name="Error_button_message">Okay</string>
+    <string name="title_activity_daily_forecast">DailyForecastActivity</string>
+    <string name="no_data">No data to display</string>
 </resources>
